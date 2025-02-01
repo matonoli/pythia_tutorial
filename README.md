@@ -28,7 +28,7 @@ conda activate pythia8-env
   ```
 - **C++ Code**: Compile and execute C++ examples:
   ```bash
-  g++ -o simulate_jpsi simulate_jpsi.cpp `root-config --cflags --libs` -I$PYTHIA8/include -L$PYTHIA8/lib -lpythia8
+  g++ -o simulate_jpsi simulate_jpsi.cpp `root-config --cflags --libs` -I$PYTHIA8/include -L$PYTHIA8/lib -lpythia8  -Wl,-rpath,$PYTHIA8/lib
   ./simulate_jpsi
   ```
 
