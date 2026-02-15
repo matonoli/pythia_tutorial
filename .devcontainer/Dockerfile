@@ -26,3 +26,10 @@ RUN /opt/conda/bin/conda install -y -c conda-forge \
     ipykernel \
     metakernel \
     && /opt/conda/bin/conda clean -afy
+
+ENV PATH=/opt/conda/bin:$PATH
+ENV LD_LIBRARY_PATH=/opt/conda/lib:$LD_LIBRARY_PATH
+ENV PYTHIA8=/opt/conda
+
+RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> /etc/bash.bashrc && \
+    echo "conda activate base" >> /etc/bash.bashrc
